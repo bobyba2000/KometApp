@@ -1,0 +1,7 @@
+<svg id="Button_Play_Idle" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect id="Frame" width="64" height="64" fill="none"/>
+  <g id="Design" transform="translate(-11 -204)">
+    <circle id="Ellipse" cx="32" cy="32" r="32" transform="translate(11 204)" fill="#3498db"/>
+    <path id="Path" d="M0,0,16,12,0,24Z" transform="translate(38 224)" fill="#edeff0"/>
+  </g>
+</svg>

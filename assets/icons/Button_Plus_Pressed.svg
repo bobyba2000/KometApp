@@ -1,0 +1,8 @@
+<svg id="Button_Plus_Pressed" xmlns="http://www.w3.org/2000/svg" width="128" height="28" viewBox="0 0 128 28">
+  <rect id="Frame" width="128" height="28" fill="none"/>
+  <g id="Design">
+    <path id="Rectangle_1" data-name="Rectangle 1" d="M0,0H118a10,10,0,0,1,10,10v8a10,10,0,0,1-10,10H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" fill="#1d1d1f"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="16" height="2" transform="translate(56 13)" fill="#1d5378"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="2" height="16" transform="translate(63 6)" fill="#1d5378"/>
+  </g>
+</svg>

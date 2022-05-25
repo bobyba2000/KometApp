@@ -1,0 +1,23 @@
+{
+    "name": "neo",
+    "short_name": "neo",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "NEO-App will be a Cross-Platform Flutter Mobile Application for Android and iOS devices. This App will be used to control a Controller Device via WiFi. The Controller Device is an external hardware attached to a DSLR Camera with USB Port  App mainly consist of below technical aspects:  Remote Read/Write Settings (WiFi WebSocket API) Live View, Camera Control Element, Gallery File Manager (SMB or other Network File Client Protocol) GPS Geo-tag TensorFlow Lite Model deployment (.TFLite file will be provided), Flickr API (REST based) Bluetooth LE (nRF52 Chip Firmware Update) Device Preset/Settings and User Login Some Custom UI element (Histogram, Curves, Meter-gauge … etc) Native UI (Material for Android and Cupertino for iOS) Performance optimized ",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+<svg id="Icon_KeypointISO_Enable" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Frame" width="24" height="24" fill="none"/>
+  <g id="Design" transform="translate(-4511 1215)">
+    <circle id="Ellipse" cx="12" cy="12" r="12" transform="translate(4511 -1215)" fill="aqua" opacity="0.35"/>
+    <path id="Path" d="M8,0l8,8L8,16,0,8Z" transform="translate(4515 -1211)" fill="aqua"/>
+  </g>
+</svg>

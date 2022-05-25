@@ -1,0 +1,15 @@
+<svg id="Button_Focus_Enable" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Frame" width="24" height="24" fill="none"/>
+  <g id="Design" transform="translate(-195 -171)">
+    <path id="Path_1" data-name="Path 1" d="M.75,9A.75.75,0,0,1,0,8.25V.75A.75.75,0,0,1,.75,0h7.5a.75.75,0,0,1,0,1.5H1.5V8.25A.75.75,0,0,1,.75,9Z" transform="translate(195 171)" fill="#959fa5"/>
+    <path id="Path_2" data-name="Path 2" d="M328.25,9a.75.75,0,0,1-.75-.75V1.5h-6.75a.75.75,0,1,1,0-1.5h7.5a.75.75,0,0,1,.75.75v7.5A.75.75,0,0,1,328.25,9Z" transform="translate(-110 171)" fill="#959fa5"/>
+    <path id="Path_3" data-name="Path 3" d="M8.25,329H.75a.75.75,0,0,1-.75-.75v-7.5a.75.75,0,1,1,1.5,0v6.75H8.25a.75.75,0,0,1,0,1.5Z" transform="translate(195 -134)" fill="#959fa5"/>
+    <path id="Path_4" data-name="Path 4" d="M328.25,329h-7.5a.75.75,0,1,1,0-1.5h6.75v-6.75a.75.75,0,1,1,1.5,0v7.5A.75.75,0,0,1,328.25,329Z" transform="translate(-110 -134)" fill="#959fa5"/>
+    <path id="Path_5" data-name="Path 5" d="M160.532,190.308h-2.266V186.45h2.266V184H156v8.758h4.532Z" transform="translate(45.335 -5.379)" fill="#959fa5"/>
+    <path id="Path_6" data-name="Path 6" d="M276,186.45h2.266v3.858H276v2.45h4.532V184H276Z" transform="translate(-67.867 -5.379)" fill="#959fa5"/>
+    <path id="Rectangle_1" data-name="Rectangle 1" d="M0,0H2.266V2.45H0Z" transform="translate(197.769 181.745)" fill="#959fa5"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="2.266" height="2.45" transform="translate(205.867 174.693)" fill="#959fa5"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="2.266" height="2.45" transform="translate(213.965 181.745)" fill="#959fa5"/>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="2.266" height="2.45" transform="translate(205.867 188.858)" fill="#959fa5"/>
+  </g>
+</svg>

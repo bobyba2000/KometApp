@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="120" viewBox="0 0 340 120">
+  <g id="Group_FlickrSuggestion" transform="translate(9648 -5848)">
+    <g id="Panel_Flickr" transform="translate(-9648 5848)">
+      <rect id="Frame" width="340" height="120" fill="none"/>
+      <g id="Design">
+        <g id="Rectangle" fill="#030303" stroke="#1d1d1f" stroke-width="2">
+          <rect width="340" height="120" rx="15" stroke="none"/>
+          <rect x="1" y="1" width="338" height="118" rx="14" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="Bar_GridExif" transform="translate(-9460 5876)">
+      <rect id="Frame-2" data-name="Frame" width="128" height="64" fill="none"/>
+      <g id="Design-2" data-name="Design" transform="translate(14423.5 -10404.5)">
+        <line id="Line_1" data-name="Line 1" y1="64" transform="translate(-14359.5 10404.5)" fill="none" stroke="#3e505b" stroke-linecap="round" stroke-width="1"/>
+        <line id="Line_2" data-name="Line 2" x2="128" transform="translate(-14423.5 10436.5)" fill="none" stroke="#3e505b" stroke-linecap="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

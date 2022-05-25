@@ -1,0 +1,7 @@
+<svg id="Button_Edit_Idle" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design" transform="translate(0 0)">
+    <path id="Path_1" data-name="Path 1" d="M0,90.026v7.5H7.5L29.634,75.394l-7.5-7.5Z" transform="translate(0 -61.527)" fill="#edeff0"/>
+    <path id="Path_2" data-name="Path 2" d="M269.828,5.256,265.157.585a2,2,0,0,0-2.83,0l-3.661,3.661,7.5,7.5,3.66-3.661A2,2,0,0,0,269.828,5.256Z" transform="translate(-234.413)" fill="#edeff0"/>
+  </g>
+</svg>

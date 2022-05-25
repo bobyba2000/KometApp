@@ -1,0 +1,7 @@
+<svg id="Button_NDFilter_Enable" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design" transform="translate(5437 -6247)">
+    <circle id="Ellipse" cx="18" cy="18" r="18" transform="translate(-5437 6247)" fill="#3498db"/>
+    <text id="Text" transform="translate(-5419 6272)" fill="#0e1011" font-size="18" font-family="Lato-Semibold, Lato" font-weight="600"><tspan x="-13.752" y="0">ND</tspan></text>
+  </g>
+</svg>

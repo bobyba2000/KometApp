@@ -1,0 +1,15 @@
+<svg id="Button_Keyframe_Disable" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Frame" width="24" height="24" fill="none"/>
+  <g id="Design" transform="translate(-231 -125)">
+    <path id="Path_1" data-name="Path 1" d="M.75,9A.75.75,0,0,1,0,8.25V.75A.75.75,0,0,1,.75,0h7.5a.75.75,0,0,1,0,1.5H1.5V8.25A.75.75,0,0,1,.75,9Z" transform="translate(231 125)" fill="#3e505b"/>
+    <path id="Path_2" data-name="Path 2" d="M328.25,9a.75.75,0,0,1-.75-.75V1.5h-6.75a.75.75,0,1,1,0-1.5h7.5a.75.75,0,0,1,.75.75v7.5A.75.75,0,0,1,328.25,9Z" transform="translate(-74 125)" fill="#3e505b"/>
+    <path id="Path_3" data-name="Path 3" d="M8.25,329H.75a.75.75,0,0,1-.75-.75v-7.5a.75.75,0,1,1,1.5,0v6.75H8.25a.75.75,0,0,1,0,1.5Z" transform="translate(231 -180)" fill="#3e505b"/>
+    <path id="Path_4" data-name="Path 4" d="M328.25,329h-7.5a.75.75,0,1,1,0-1.5h6.75v-6.75a.75.75,0,1,1,1.5,0v7.5A.75.75,0,0,1,328.25,329Z" transform="translate(-74 -180)" fill="#3e505b"/>
+    <path id="Path_5" data-name="Path 5" d="M10,0V18L1,9Z" transform="translate(233 128)" fill="#3e505b"/>
+    <g id="Path_6" data-name="Path 6" transform="translate(243 128)" fill="none">
+      <path d="M0,0,9,9,0,18Z" stroke="none"/>
+      <path d="M 1 2.414219856262207 L 1 15.58578014373779 L 7.585780143737793 9 L 1 2.414219856262207 M 0 0 L 9 9 L 0 18 L 0 0 Z" stroke="none" fill="#3e505b"/>
+    </g>
+    <path id="Path_7" data-name="Path 7" d="M94.231,126.981a.75.75,0,0,1-.531-.219l-13.5-13.5a.751.751,0,1,1,1.062-1.062l13.5,13.5a.75.75,0,0,1-.531,1.281Z" transform="translate(155.52 17.52)" fill="#3e505b"/>
+  </g>
+</svg>

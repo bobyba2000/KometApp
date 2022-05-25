@@ -1,0 +1,17 @@
+<svg id="Button_Preset_Idle" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design">
+    <g id="Rectangle" fill="none" stroke="#959fa5" stroke-width="1">
+      <rect width="36" height="36" stroke="none"/>
+      <rect x="0.5" y="0.5" width="35" height="35" fill="none"/>
+    </g>
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="3" cy="3" r="3" transform="translate(9 2.4)" fill="#959fa5"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="3" cy="3" r="3" transform="translate(21 10.8)" fill="#959fa5"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="3" cy="3" r="3" transform="translate(9 19.2)" fill="#959fa5"/>
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="3" cy="3" r="3" transform="translate(21 27.6)" fill="#959fa5"/>
+    <path id="Path_1" data-name="Path 1" d="M56.4,31.2a3.6,3.6,0,0,0,3.546-3H76.8V27H59.946a3.6,3.6,0,0,0-7.092,0H48v1.2h4.854A3.6,3.6,0,0,0,56.4,31.2Zm0-6A2.4,2.4,0,1,1,54,27.6,2.4,2.4,0,0,1,56.4,25.2Z" transform="translate(-44.4 -22.2)" fill="#959fa5"/>
+    <path id="Path_2" data-name="Path 2" d="M68.4,143.2a3.6,3.6,0,0,0,3.546-3H76.8V139H71.946a3.6,3.6,0,0,0-7.092,0H48v1.2H64.854A3.6,3.6,0,0,0,68.4,143.2Zm0-6a2.4,2.4,0,1,1-2.4,2.4A2.4,2.4,0,0,1,68.4,137.2Z" transform="translate(-44.4 -125.8)" fill="#959fa5"/>
+    <path id="Path_3" data-name="Path 3" d="M56.4,255.2a3.6,3.6,0,0,0,3.546-3H76.8V251H59.946a3.6,3.6,0,0,0-7.092,0H48v1.2h4.854A3.6,3.6,0,0,0,56.4,255.2Zm0-6a2.4,2.4,0,1,1-2.4,2.4A2.4,2.4,0,0,1,56.4,249.2Z" transform="translate(-44.4 -229.4)" fill="#959fa5"/>
+    <path id="Path_4" data-name="Path 4" d="M68.4,367.2a3.6,3.6,0,0,0,3.546-3H76.8V363H71.946a3.6,3.6,0,0,0-7.092,0H48v1.2H64.854A3.6,3.6,0,0,0,68.4,367.2Zm0-6a2.4,2.4,0,1,1-2.4,2.4A2.4,2.4,0,0,1,68.4,361.2Z" transform="translate(-44.4 -333)" fill="#959fa5"/>
+  </g>
+</svg>

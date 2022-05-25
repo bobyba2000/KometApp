@@ -1,0 +1,9 @@
+<svg id="Button_BulbTrigger_Enable" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design" transform="translate(-470 -184)">
+    <g id="Rectangle" transform="translate(470 190)" fill="none" stroke="#3498db" stroke-width="1">
+      <rect width="36" height="24" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="35" height="23" rx="4.5" fill="none"/>
+    </g>
+  </g>
+</svg>

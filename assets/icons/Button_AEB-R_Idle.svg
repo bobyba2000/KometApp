@@ -1,0 +1,10 @@
+<svg id="Button_AEB-R_Idle" xmlns="http://www.w3.org/2000/svg" width="128" height="28" viewBox="0 0 128 28">
+  <rect id="Frame" width="128" height="28" fill="none"/>
+  <g id="Design">
+    <g id="Rectangle" fill="#0e1011" stroke="#1d1d1f" stroke-width="2">
+      <path d="M0,0H114a14,14,0,0,1,14,14v0a14,14,0,0,1-14,14H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" stroke="none"/>
+      <path d="M1.929,1H114a13,13,0,0,1,13,13v0a13,13,0,0,1-13,13H1.929A.929.929,0,0,1,1,26.071V1.929A.929.929,0,0,1,1.929,1Z" fill="none"/>
+    </g>
+    <path id="Path" d="M0,0,12,8,0,16V0Z" transform="translate(58 6)" fill="#3498db"/>
+  </g>
+</svg>

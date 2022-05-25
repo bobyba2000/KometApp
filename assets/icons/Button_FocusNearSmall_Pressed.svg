@@ -1,0 +1,10 @@
+<svg id="Button_FocusNearSmall_Pressed" xmlns="http://www.w3.org/2000/svg" width="64" height="28" viewBox="0 0 64 28">
+  <rect id="Frame" width="64" height="28" fill="none"/>
+  <g id="Design" transform="translate(-152.5 -335)">
+    <rect id="Rectangle" width="64" height="28" transform="translate(152.5 335)" fill="#1d1d1f"/>
+    <g id="Path" transform="translate(178.5 341)" fill="none">
+      <path d="M12,0V16L0,8Z" stroke="none"/>
+      <path d="M 11 1.86851692199707 L 1.802775382995605 8 L 11 14.13148307800293 L 11 1.86851692199707 M 12 0 L 12 16 L 0 8 L 12 0 Z" stroke="none" fill="#1d5378"/>
+    </g>
+  </g>
+</svg>

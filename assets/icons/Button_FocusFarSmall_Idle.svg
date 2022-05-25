@@ -1,0 +1,16 @@
+<svg id="Button_FocusFarSmall_Idle" xmlns="http://www.w3.org/2000/svg" width="64" height="28" viewBox="0 0 64 28">
+  <g id="Frame" fill="#fff" stroke="#707070" stroke-width="1">
+    <rect width="64" height="28" stroke="none"/>
+    <rect x="0.5" y="0.5" width="63" height="27" fill="none"/>
+  </g>
+  <g id="Design" transform="translate(-5705 -3578)">
+    <g id="Rectangle" transform="translate(5705 3578)" fill="#0e1011" stroke="#1d1d1f" stroke-width="2">
+      <rect width="64" height="28" stroke="none"/>
+      <rect x="1" y="1" width="62" height="26" fill="none"/>
+    </g>
+    <g id="Path" transform="translate(5731 3584)" fill="none">
+      <path d="M0,0,12,8,0,16V0Z" stroke="none"/>
+      <path d="M 1 1.86851692199707 L 1 8 L 1 14.13148307800293 L 10.19722461700439 8 L 1 1.86851692199707 M 0 0 L 12 8 L 0 16 L 0 8 L 0 0 Z" stroke="none" fill="#3498db"/>
+    </g>
+  </g>
+</svg>

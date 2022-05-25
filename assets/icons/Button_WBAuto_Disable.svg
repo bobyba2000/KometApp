@@ -1,0 +1,6 @@
+<svg id="Button_WBAuto_Disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="Frame" width="32" height="32" fill="none"/>
+  <g id="Design" transform="translate(0 5.333)">
+    <path id="Path" d="M9.277,110.917H12.37l-1.613-4.8Zm20.3-7.467-1.613,8.4-2.017-8.4H23.8l-2.017,8.4-1.613-8.4H19.092a10.7,10.7,0,1,0-8.336,17.333,11.07,11.07,0,0,0,9.681-5.867l.135.533h2.286l2.017-8.133,2.017,8.133h2.42l2.689-12H29.58Zm-15.731,12-.941-2.667h-4.3l-.941,2.667H5.109l4.3-12H12.1l4.3,12Z" transform="translate(0 -99.45)" fill="#959fa5"/>
+  </g>
+</svg>

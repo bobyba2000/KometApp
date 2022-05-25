@@ -1,0 +1,7 @@
+<svg id="Button_Stop_Pressed" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect id="Frame" width="64" height="64" fill="none"/>
+  <g id="Design" transform="translate(63 -204)">
+    <circle id="Ellipse" cx="32" cy="32" r="32" transform="translate(-63 204)" fill="#1d5378"/>
+    <rect id="Rectangle" width="24" height="24" transform="translate(-43 224)" fill="#edeff0"/>
+  </g>
+</svg>

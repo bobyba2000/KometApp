@@ -1,0 +1,7 @@
+<svg id="Button_Flickr_Idle" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design" transform="translate(-6846 538)">
+    <rect id="Rectangle" width="36" height="15" rx="7.5" transform="translate(6846 -528)" fill="#edeff0"/>
+    <text id="Text" transform="translate(6864 -516)" fill="#0e1011" font-size="12" font-family="Lato-Black, Lato" font-weight="800"><tspan x="-13.956" y="0">flickr</tspan></text>
+  </g>
+</svg>

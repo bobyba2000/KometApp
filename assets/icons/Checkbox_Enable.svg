@@ -1,0 +1,6 @@
+<svg id="Checkbox_Enable" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <rect id="Frame" width="18" height="18" fill="none"/>
+  <g id="Design">
+    <path id="Path" d="M9,0a9,9,0,1,0,9,9A9.01,9.01,0,0,0,9,0Zm4.562,7.093L8.686,11.968a.749.749,0,0,1-1.06,0L5.189,9.53a.75.75,0,1,1,1.06-1.06l1.907,1.907L12.5,6.032a.75.75,0,1,1,1.06,1.06Zm0,0" fill="#3498db"/>
+  </g>
+</svg>

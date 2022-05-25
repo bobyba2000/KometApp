@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="Button_More_Pressed" transform="translate(36) rotate(90)">
+    <rect id="Frame" width="36" height="36" fill="none"/>
+    <g id="Design" transform="translate(-139.5)">
+      <path id="Path" d="M157.5,9A4.5,4.5,0,1,0,153,4.5,4.513,4.513,0,0,0,157.5,9Zm0,4.5A4.5,4.5,0,1,0,162,18,4.513,4.513,0,0,0,157.5,13.5Zm0,13.5a4.5,4.5,0,1,0,4.5,4.5A4.513,4.513,0,0,0,157.5,27Z" fill="#3e505b"/>
+    </g>
+  </g>
+</svg>

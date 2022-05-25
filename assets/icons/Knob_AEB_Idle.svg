@@ -1,0 +1,9 @@
+<svg id="Knob_AEB_Idle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Frame" width="24" height="24" fill="none"/>
+  <g id="Design">
+    <g id="Path" fill="#0e1011">
+      <path d="M 12 23.44098472595215 L 0.5 17.69098472595215 L 0.5 0.5 L 23.5 0.5 L 23.5 17.69098472595215 L 12 23.44098472595215 Z" stroke="none"/>
+      <path d="M 1 1 L 1 17.38196563720703 L 12 22.88196563720703 L 23 17.38196563720703 L 23 1 L 1 1 M 0 0 L 24 0 L 24 18 L 12 24 L 0 18 L 0 0 Z" stroke="none" fill="#3498db"/>
+    </g>
+  </g>
+</svg>

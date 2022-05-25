@@ -1,0 +1,7 @@
+<svg id="Button_AEB-R_Pressed" xmlns="http://www.w3.org/2000/svg" width="128" height="28" viewBox="0 0 128 28">
+  <rect id="Frame" width="128" height="28" fill="none"/>
+  <g id="Design">
+    <path id="Rectangle" d="M0,0H114a14,14,0,0,1,14,14v0a14,14,0,0,1-14,14H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" fill="#1d1d1f"/>
+    <path id="Path" d="M0,0,12,8,0,16V0Z" transform="translate(58 6)" fill="#1d5378"/>
+  </g>
+</svg>

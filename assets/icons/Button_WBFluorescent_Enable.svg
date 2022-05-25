@@ -1,0 +1,14 @@
+<svg id="Button_WBFluorescent_Enable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="Frame" width="32" height="32" fill="none"/>
+  <g id="Design" transform="translate(0 5.333)">
+    <rect id="Rectangle" width="23.561" height="6.714" transform="translate(4.176 7.365)" fill="#edeff0"/>
+    <path id="Path_1" data-name="Path 1" d="M.683,386.563H2.732v-6.714H.683a.71.71,0,0,0-.683.734v5.247A.71.71,0,0,0,.683,386.563Z" transform="translate(0 -372.437)" fill="#edeff0"/>
+    <path id="Path_2" data-name="Path 2" d="M859.855,385.83v-5.247a.71.71,0,0,0-.683-.734h-2.049v6.714h2.049A.71.71,0,0,0,859.855,385.83Z" transform="translate(-827.855 -372.437)" fill="#edeff0"/>
+    <path id="Path_3" data-name="Path 3" d="M428.9,599.907h1.234a.71.71,0,0,0,.683-.734v-4.6a.71.71,0,0,0-.683-.734H428.9a.71.71,0,0,0-.683.734v4.6A.71.71,0,0,0,428.9,599.907Z" transform="translate(-413.594 -578.574)" fill="#edeff0"/>
+    <path id="Path_4" data-name="Path 4" d="M87.448,599.5l.977.809a.652.652,0,0,0,.958-.133L92,596.525a.771.771,0,0,0-.124-1.029l-.977-.809a.652.652,0,0,0-.958.133l-2.615,3.646A.771.771,0,0,0,87.448,599.5Z" transform="translate(-84.205 -579.246)" fill="#edeff0"/>
+    <path id="Path_5" data-name="Path 5" d="M703.426,594.687l-.977.809a.771.771,0,0,0-.124,1.029l2.615,3.646a.652.652,0,0,0,.958.133l.977-.809a.771.771,0,0,0,.124-1.029l-2.615-3.646A.652.652,0,0,0,703.426,594.687Z" transform="translate(-678.205 -579.246)" fill="#edeff0"/>
+    <path id="Path_6" data-name="Path 6" d="M428.9,183.907h1.234a.71.71,0,0,0,.683-.734v-4.6a.71.71,0,0,0-.683-.734H428.9a.71.71,0,0,0-.683.734v4.6A.71.71,0,0,0,428.9,183.907Z" transform="translate(-413.594 -177.837)" fill="#edeff0"/>
+    <path id="Path_7" data-name="Path 7" d="M89.938,186.806a.652.652,0,0,0,.958.133l.977-.809A.771.771,0,0,0,92,185.1l-2.615-3.646a.652.652,0,0,0-.958-.133l-.977.809a.771.771,0,0,0-.124,1.029Z" transform="translate(-84.204 -181.047)" fill="#edeff0"/>
+    <path id="Path_8" data-name="Path 8" d="M702.448,186.13l.977.809a.652.652,0,0,0,.958-.133L707,183.16a.771.771,0,0,0-.124-1.029l-.977-.809a.652.652,0,0,0-.958.133l-2.615,3.646A.771.771,0,0,0,702.448,186.13Z" transform="translate(-678.205 -181.047)" fill="#edeff0"/>
+  </g>
+</svg>

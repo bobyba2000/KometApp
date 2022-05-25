@@ -1,0 +1,11 @@
+<svg id="Button_MotionControl_Enable" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Frame" width="36" height="36" fill="none"/>
+  <g id="Design" transform="translate(5421 -10413)">
+    <g id="Rectangle" transform="translate(-5421 10413)" fill="none" stroke="#3498db" stroke-width="1">
+      <rect width="36" height="36" stroke="none"/>
+      <rect x="0.5" y="0.5" width="35" height="35" fill="none"/>
+    </g>
+  </g>
+  <text id="MC_TBA" data-name="MC
+TBA" transform="translate(18 15)" fill="#3498db" font-size="15" font-family="Lato-Semibold, Lato" font-weight="600"><tspan x="-12.011" y="0">MC</tspan><tspan x="-14.43" y="18">TBA</tspan></text>
+</svg>

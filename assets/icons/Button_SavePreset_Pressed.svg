@@ -1,0 +1,6 @@
+<svg id="Button_SavePreset_Pressed" xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24">
+  <rect id="Frame" width="120" height="24" fill="none"/>
+  <g id="Design" transform="translate(-102 -362)">
+    <text id="Text" transform="translate(162 380)" fill="#1d5378" font-size="15" font-family="Lato-Semibold, Lato" font-weight="600" text-decoration="underline"><tspan x="-46.59" y="0">SAVE PRESET</tspan></text>
+  </g>
+</svg>

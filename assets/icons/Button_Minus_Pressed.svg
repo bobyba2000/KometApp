@@ -1,0 +1,7 @@
+<svg id="Button_Minus_Pressed" xmlns="http://www.w3.org/2000/svg" width="128" height="28" viewBox="0 0 128 28">
+  <rect id="Frame" width="128" height="28" fill="none"/>
+  <g id="Design">
+    <path id="Rectangle_1" data-name="Rectangle 1" d="M10,0H128a0,0,0,0,1,0,0V28a0,0,0,0,1,0,0H10A10,10,0,0,1,0,18V10A10,10,0,0,1,10,0Z" fill="#1d1d1f"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="16" height="2" transform="translate(56 13)" fill="#1d5378"/>
+  </g>
+</svg>

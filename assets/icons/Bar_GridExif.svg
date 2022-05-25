@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="129" height="65" viewBox="0 0 129 65">
+  <g id="Bar_GridExif" transform="translate(0.5 0.5)">
+    <rect id="Frame" width="128" height="64" fill="none"/>
+    <g id="Design" transform="translate(14423.5 -10404.5)">
+      <line id="Line_1" data-name="Line 1" y1="64" transform="translate(-14359.5 10404.5)" fill="none" stroke="#1d1d1f" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_2" data-name="Line 2" x2="128" transform="translate(-14423.5 10436.5)" fill="none" stroke="#1d1d1f" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
