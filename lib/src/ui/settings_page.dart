@@ -21,7 +21,8 @@ class SettingsPage extends StatefulWidget {
   const SettingsPage({Key key}) : super(key: key);
 
   static String urlDemo = "localhost:8000";
-  static String urlProd = "192.168.1.1:8080";
+  // static String urlProd = "192.168.1.1:8080";
+  static String urlProd = "103.232.103.205:8080";
   static String red = "RED";
   static String green = "GREEN";
   static String blue = "BLUE";

@@ -20,7 +20,7 @@ class SecondsPicker extends StatefulWidget {
 class _SecondsPickerState extends State<SecondsPicker> {
   FixedExtentScrollController _scrollController;
 
-  int curIndex = 3;
+  int curIndex = 0;
 
   List<int> seconds = [];
 

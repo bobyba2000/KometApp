@@ -306,6 +306,7 @@ class MjpegWidget extends HookWidget {
   final Widget Function(BuildContext contet, dynamic error, dynamic stack)
       error;
   final Map<String, String> headers;
+  final Function onTryAgain;
 
   const MjpegWidget({
     this.isLive = false,
@@ -318,6 +319,7 @@ class MjpegWidget extends HookWidget {
     this.loading,
     @required this.mjpegHistoBloc,
     this.headers = const {},
+    this.onTryAgain,
     Key key,
   }) : super(key: key);
 
@@ -345,6 +347,13 @@ class MjpegWidget extends HookWidget {
     }, [manager]);
 
     if (errorState.value != null) {
+      // onTryAgain.call();
+      // return SizedBox(
+      //     width: width,
+      //     height: height,
+      //     child: loading == null
+      //         ? Center(child: CircularProgressIndicator())
+      //         : loading(context));
       return SizedBox(
         width: width,
         height: height,
@@ -404,8 +413,13 @@ class _StreamManager {
   // ignore: cancel_subscriptions
   StreamSubscription _subscription;
 
-  _StreamManager(this.stream, this.isLive, this.headers, this._timeout,
-      this.mjpegHistoBloc);
+  _StreamManager(
+    this.stream,
+    this.isLive,
+    this.headers,
+    this._timeout,
+    this.mjpegHistoBloc,
+  );
 
   Future<void> dispose() async {
     if (_subscription != null) {
@@ -425,6 +439,7 @@ class _StreamManager {
   void updateStream(BuildContext context, ValueNotifier<MemoryImage> image,
       ValueNotifier<List<dynamic>> errorState) async {
     try {
+      print('send REquest');
       final request = Request("GET", Uri.parse(stream));
       request.headers.addAll(headers);
       final response = await _httpClient.send(request).timeout(
@@ -458,7 +473,7 @@ class _StreamManager {
 
               _sendImage(context, image, errorState, _carry);
               if (count >= 20) {
-                 doMargic(Uint8List.fromList(_carry));
+                doMargic(Uint8List.fromList(_carry));
                 count = 0;
               }
               _carry = [];

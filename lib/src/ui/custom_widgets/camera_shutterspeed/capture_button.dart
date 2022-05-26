@@ -38,8 +38,6 @@ class _CaptureButtonState extends State<CaptureButton>
   double percentage = 0;
   double incValue = 0;
 
-  int multishots = 0;
-
   @override
   void initState() {
     controller = AnimationController(
@@ -72,7 +70,7 @@ class _CaptureButtonState extends State<CaptureButton>
             });
             print("percentage $percentage");
 
-            controller.animateTo(percentage);
+            // controller.animateTo(1);
           }
         } catch (e) {
           print("error $e");
@@ -121,15 +119,24 @@ class _CaptureButtonState extends State<CaptureButton>
           context.read<BulbTimeCounterBloc>().add("00 : 00 : 00");
           context.read<SecondsRecieverBloc>().add(60);
         }
-
-        if (json['NTF'] != null) {
-          if (json['NTF']['CAPTURE'] != null) {
-            dynamic multishots = json['NTF']['CAPTURE']['MULTISHOTS'];
-            int cur = int.parse(multishots);
-            if (cur != this.multishots) {
-              controller.reset();
-              controller.animateTo(1);
-              this.multishots = cur;
+        if (currentTabState is TabStateHDR) {
+          if (json['NTF' != null]) {
+            if (json['NTF']['CAPTURE'] != null) {
+              if (json['NTF']['CAPTURE']['HDR'] != null) {
+                controller.reset();
+                controller.animateTo(1);
+              }
+            }
+          }
+        } else {
+          if (json['NTF'] != null) {
+            if (json['NTF']['CAPTURE'] != null) {
+              if (json['NTF']['CAPTURE']['DELAY']['H'] == 0 &&
+                  json['NTF']['CAPTURE']['DELAY']['M'] == 0 &&
+                  json['NTF']['CAPTURE']['DELAY']['S'] == 0) {
+                controller.reset();
+                controller.animateTo(1);
+              }
             }
           }
         }
@@ -173,18 +180,70 @@ class _CaptureButtonState extends State<CaptureButton>
             print("STEP ${model.step}");
             print("shift $shift");
             print("sequences ${model.sequence.toString()}");
-            channel.sink.add(jsonEncode({
-              "CMD": {
-                "HDR": {
-                  "BRACKET": model.bracket,
-                  "STOP": "+-${model.step}",
-                  "ADVANCED": {
-                    "SEQUENCE": List<String>.from(model.sequence.map((x) => x)),
-                    "SHIFT": "$shift"
+            channel.sink.add(
+              jsonEncode(
+                {
+                  "CMD": {
+                    "CAPTURE": {
+                      // "DELAY": model.delay.toMap(),
+                      // "MULTISHOTS": model.multishots,
+                      "HDR": {
+                        "BRACKET": int.tryParse(model.bracket) ?? 0,
+                        "STEP": double.tryParse(model.step.substring(1)) ?? 0
+                      },
+                      "ORDER": "-0+"
+                    }
                   }
-                }
-              }
-            }));
+                },
+              ),
+            );
+            // if (model.sequence.isNotEmpty) {
+            //   channel.sink.add(
+            //     jsonEncode(
+            //       {
+            //         "CMD": {
+            //           "CAPTURE": {
+            //             // "DELAY": model.delay.toMap(),
+            //             // "MULTISHOTS": model.multishots,
+            //             "HDR": {
+            //               "BRACKET": int.tryParse(model.bracket) ?? 0,
+            //               "STEP": double.tryParse(model.step.substring(1)) ?? 0,
+            //               "SEQUENCE":
+            //                   List<String>.from(model.sequence.map((x) => x)),
+            //               "SHIFT": "$shift",
+            //               "ORDER": "-0+",
+            //             }
+            //           }
+            //         }
+            //       },
+            //     ),
+            //   );
+            // } else {
+            //   channel.sink.add(
+            //     jsonEncode(
+            //       {
+            //         "CMD": {
+            //           "CAPTURE": {
+            //             // "DELAY": model.delay.toMap(),
+            //             // "MULTISHOTS": model.multishots,
+            //             "HDR": {
+            //               "BRACKET": int.tryParse(model.bracket) ?? 0,
+            //               "STEP": double.tryParse(model.step.substring(1)) ?? 0,
+            //             },
+            //             "ORDER": "-0+"
+            //           }
+            //         }
+            //       },
+            //     ),
+            //   );
+            // }
+            channel.sink.add(
+              jsonEncode(
+                {
+                  "CMD": {"CAPTURE": "HDR"}
+                },
+              ),
+            );
           } else if (currentTabState is TabStateShutterSpeed) {
             print("more option and is hutter tab");
 

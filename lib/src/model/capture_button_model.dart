@@ -7,10 +7,23 @@ class CaptureButtonModel extends ChangeNotifier {
   String bracket;
   String step;
   String shift;
+  TimeDelay delay = TimeDelay(h: 0, m: 0, s: 0);
+  int multishots = 0;
+
   List<String> sequence;
 
   set setBracket(String bracket) {
     this.bracket = bracket;
+    notifyListeners();
+  }
+
+  set setDelay(TimeDelay delay) {
+    this.delay = delay;
+    notifyListeners();
+  }
+
+  set setMultishots(int multishots) {
+    this.multishots = multishots;
     notifyListeners();
   }
 
@@ -62,5 +75,16 @@ class CaptureButtonModel extends ChangeNotifier {
         step.hashCode ^
         shift.hashCode ^
         sequence.hashCode;
+  }
+}
+
+class TimeDelay {
+  int h;
+  int m;
+  int s;
+  TimeDelay({this.h, this.m, this.s});
+
+  Map<String, dynamic> toMap() {
+    return {'H': h, 'M': m, 'S': s};
   }
 }

@@ -55,6 +55,12 @@ class _LiveViewWidgetState extends State<LiveViewWidget>
     super.initState();
   }
 
+  @override
+  void didUpdateWidget(LiveViewWidget oldWidget) {
+    print('update');
+    super.didUpdateWidget(oldWidget);
+  }
+
   Future start(String webUrl) async {
     print("start liveview");
     try {
@@ -72,7 +78,7 @@ class _LiveViewWidgetState extends State<LiveViewWidget>
               if (json["RSP"]["LIVEVIEW"] == "OK") {
                 // context.read<ParamsIsoBloc>().add(curentvalue);
                 LiveView fstop = LiveView.fromJson(jsonDecode(event));
-                await Future.delayed(Duration(milliseconds: 5500), () {
+                await Future.delayed(Duration(milliseconds: 2000), () {
                   setState(() {
                     liveViewUrl = fstop.rsp.stream;
                     // liveViewUrl = 'http://103.232.103.205:8090/feed.mjpeg';
@@ -113,6 +119,7 @@ class _LiveViewWidgetState extends State<LiveViewWidget>
     streamHelper.dispose();
     mjpegHistoBloc.close();
     expandController.dispose();
+    print('Liveview dispose');
     super.dispose();
   }
 
@@ -184,6 +191,20 @@ class _LiveViewWidgetState extends State<LiveViewWidget>
                                         isLive: true,
                                         stream: "$liveViewUrl",
                                         mjpegHistoBloc: mjpegHistoBloc,
+                                        onTryAgain: () {
+                                          channel.sink.add(
+                                            jsonEncode(
+                                              {
+                                                'CMD': {
+                                                  'LIVEVIEW': 'STOP',
+                                                }
+                                              },
+                                            ),
+                                          );
+                                          channel.sink.add(jsonEncode({
+                                            "CMD": {"LIVEVIEW": "START"}
+                                          }));
+                                        },
                                       );
                                     })
                                 : LiveViewLocalMjpeg(),

@@ -33,42 +33,92 @@ class Server {
                       ws.add(
                           '{"RSP":{"LIVEVIEW":"OK","STREAM":"http://91.133.85.170:8090/cgi-bin/faststream.jpg?stream=half&fps=15"}}');
                       break;
-                    // case '{"CMD":{"CAPTURE":"IMAGE"}}':
-                    //   await Future.delayed(Duration(seconds: 2), () {
-                    //     ws.add({
-                    //       "NTF": {
-                    //         "CAPTURE": {
-                    //           "DELAY": {"H": 0, "M": 0, "S": 0},
-                    //           "MULTISHOTS": -3
-                    //         }
-                    //       }
-                    //     });
-                    //   });
-                    //   await Future.delayed(Duration(seconds: 2), () {
-                    //     ws.add({
-                    //       "NTF": {
-                    //         "CAPTURE": {
-                    //           "DELAY": {"H": 0, "M": 0, "S": 0},
-                    //           "MULTISHOTS": -2
-                    //         }
-                    //       }
-                    //     });
-                    //   });
+                    case '{"CMD":{"CAPTURE":"HDR"}}':
+                      print('here');
+                      await Future.delayed(
+                        Duration(seconds: 2),
+                        () {
+                          ws.add(
+                            {
+                              "NTF": {
+                                "CAPTURE": {
+                                  "HDR": {"BRACKET": -3}
+                                }
+                              }
+                            },
+                          );
+                        },
+                      );
+                      await Future.delayed(
+                        Duration(seconds: 2),
+                        () {
+                          ws.add(
+                            {
+                              "NTF": {
+                                "CAPTURE": {
+                                  "HDR": {"BRACKET": -2}
+                                }
+                              }
+                            },
+                          );
+                        },
+                      );
 
-                    //   await Future.delayed(Duration(seconds: 2), () {
-                    //     ws.add({
-                    //       "NTF": {
-                    //         "CAPTURE": {
-                    //           "DELAY": {"H": 0, "M": 0, "S": 0},
-                    //           "MULTISHOTS": -1
-                    //         }
-                    //       }
-                    //     });
-                    //   });
-                    //   ws.add({
-                    //     "RSP": {"CAPTURE": "OK"}
-                    //   });
-                    //   break;
+                      await Future.delayed(
+                        Duration(seconds: 2),
+                        () {
+                          ws.add(
+                            {
+                              "NTF": {
+                                "CAPTURE": {
+                                  "HDR": {"BRACKET": -1}
+                                }
+                              }
+                            },
+                          );
+                        },
+                      );
+                      ws.add({
+                        "RSP": {"CAPTURE": "OK"}
+                      });
+                      break;
+
+                    case '{"CMD":{"CAPTURE":"IMAGE"}}':
+                      await Future.delayed(Duration(seconds: 2), () {
+                        ws.add({
+                          "NTF": {
+                            "CAPTURE": {
+                              "DELAY": {"H": 0, "M": 0, "S": 0},
+                              "MULTISHOTS": -3
+                            }
+                          }
+                        });
+                      });
+                      await Future.delayed(Duration(seconds: 2), () {
+                        ws.add({
+                          "NTF": {
+                            "CAPTURE": {
+                              "DELAY": {"H": 0, "M": 0, "S": 0},
+                              "MULTISHOTS": -2
+                            }
+                          }
+                        });
+                      });
+
+                      await Future.delayed(Duration(seconds: 2), () {
+                        ws.add({
+                          "NTF": {
+                            "CAPTURE": {
+                              "DELAY": {"H": 0, "M": 0, "S": 0},
+                              "MULTISHOTS": -1
+                            }
+                          }
+                        });
+                      });
+                      ws.add({
+                        "RSP": {"CAPTURE": "OK"}
+                      });
+                      break;
                     default:
                       print('default');
                       break;

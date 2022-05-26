@@ -5,6 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neo/src/constants/hex_color.dart';
 import 'package:neo/src/constants/neo_fonts.dart';
+import 'package:neo/src/model/capture_button_model.dart';
+import 'package:provider/provider.dart';
 import 'package:web_socket_channel/io.dart';
 
 import 'seconds_picker.dart';
@@ -29,10 +31,12 @@ class _ManualTabState extends State<ManualTab> {
     5,
   ];
   IOWebSocketChannel _channel;
+  CaptureButtonModel model;
 
   @override
   void initState() {
     _channel = IOWebSocketChannel.connect(widget.url);
+    model = Provider.of<CaptureButtonModel>(context, listen: false);
     super.initState();
   }
 
@@ -84,6 +88,7 @@ class _ManualTabState extends State<ManualTab> {
                       setState(() {
                         this.curSec = sec;
                       });
+                      model.setDelay = TimeDelay(h: 0, m: 0, s: sec);
                       _channel.sink.add(
                         jsonEncode(
                           {
@@ -158,6 +163,7 @@ class _ManualTabState extends State<ManualTab> {
                       setState(() {
                         curItem = items.indexOf(e);
                       });
+                      model.setMultishots = e;
                       _channel.sink.add(
                         jsonEncode(
                           {
