@@ -12,9 +12,13 @@ import 'package:neo/src/bloc/more_option/button_mode/button_mode_state.dart';
 import 'package:neo/src/bloc/more_option/capture_button_pressed_bloc.dart';
 import 'package:neo/src/bloc/more_option/more_option_visibility_bloc.dart';
 import 'package:neo/src/bloc/more_option/seconds_reciever_bloc.dart';
+import 'package:neo/src/bloc/params_button/params_fstop_bloc.dart';
+import 'package:neo/src/bloc/params_button/params_iso_bloc.dart';
+import 'package:neo/src/bloc/params_button/params_shutter_bloc.dart';
 import 'package:neo/src/bloc/tab_bloc/tab_bloc.dart';
 import 'package:neo/src/bloc/tab_bloc/tab_state.dart';
 import 'package:neo/src/model/capture_button_model.dart';
+import 'package:neo/src/ui/custom_widgets/hdr/collapse_button.dart';
 import 'package:neo/src/ui/custom_widgets/row_more_flickr_capture_raw_image/dotted_circular_progress.dart';
 import 'package:provider/provider.dart';
 import 'package:web_socket_channel/io.dart';
@@ -48,7 +52,7 @@ class _CaptureButtonState extends State<CaptureButton>
     )..addListener(() {
         if (controller.isCompleted) {
           setState(() {
-            percentage = 0;
+            // percentage = 0;
           });
         } else {
           setState(() {});
@@ -65,11 +69,6 @@ class _CaptureButtonState extends State<CaptureButton>
 
           String rsp = map['RSP']['CAPTURE'];
           if (rsp == "OK") {
-            setState(() {
-              percentage = percentage + incValue;
-            });
-            print("percentage $percentage");
-
             // controller.animateTo(1);
           }
         } catch (e) {
@@ -86,7 +85,7 @@ class _CaptureButtonState extends State<CaptureButton>
                 percentage = percentage + incValue;
               });
               print("percentage $percentage");
-              controller.animateTo(1);
+              // controller.animateTo(1);
             }
           }
         } catch (e) {
@@ -95,7 +94,6 @@ class _CaptureButtonState extends State<CaptureButton>
       }
 
       try {
-        print(event);
         Map json = jsonDecode(event);
         if (json["NTF"] != null) {
           if (json["NTF"]["BULB"] != null &&
@@ -120,12 +118,31 @@ class _CaptureButtonState extends State<CaptureButton>
           context.read<SecondsRecieverBloc>().add(60);
         }
         if (currentTabState is TabStateHDR) {
-          if (json['NTF' != null]) {
+          print(event);
+          if (json['NTF'] != null) {
             if (json['NTF']['CAPTURE'] != null) {
               if (json['NTF']['CAPTURE']['HDR'] != null) {
-                controller.reset();
-                controller.animateTo(1);
+                controller.animateTo(percentage + incValue);
+                setState(() {
+                  percentage = percentage + incValue;
+                  print(percentage);
+                });
               }
+            }
+            if (json['NTF']['CONTROL_SHUTTERSPEED'] != null) {
+              print('shutterspeed');
+              String shutterspeed = json['NTF']['CONTROL_SHUTTERSPEED'];
+              context.read<ParamsShutterBloc>().add('$shutterspeed');
+            }
+            if (json['NTF']['CONTROL_FSTOP'] != null) {
+              print('fstop');
+              String fstop = json['NTF']['CONTROL_FSTOP'];
+              context.read<ParamsFstopBloc>().add('$fstop');
+            }
+            if (json['NTF']['CONTROL_ISO'] != null) {
+              print('iso');
+              String iso = json['NTF']['CONTROL_ISO'];
+              context.read<ParamsIsoBloc>().add('$iso');
             }
           }
         } else {
@@ -161,6 +178,9 @@ class _CaptureButtonState extends State<CaptureButton>
         onTap: () {
           if (currentTabState == null) return;
           if (loading) return;
+          setState(() {
+            percentage = 0;
+          });
           bool moreOptionOpen = context.read<MoreOptionVisibilityBloc>().state;
           print("currentTabState $currentTabState");
 
@@ -172,31 +192,57 @@ class _CaptureButtonState extends State<CaptureButton>
             double v = double.parse(model.shift);
             String shift = returnSHift(v);
 
+            List<String> sequence = List.from(model.sequence);
             setState(() {
-              incValue = 1 / model.sequence.length;
+              incValue = 1 / int.tryParse(model.bracket);
+              percentage = 0;
             });
+            sequence.insert((sequence.length / 2).ceil(), 'BASE');
 
             print("BRACKET ${model.bracket}");
             print("STEP ${model.step}");
-            print("shift $shift");
+            print("shift $v");
             print("sequences ${model.sequence.toString()}");
-            channel.sink.add(
-              jsonEncode(
-                {
-                  "CMD": {
-                    "CAPTURE": {
-                      // "DELAY": model.delay.toMap(),
-                      // "MULTISHOTS": model.multishots,
-                      "HDR": {
-                        "BRACKET": int.tryParse(model.bracket) ?? 0,
-                        "STEP": double.tryParse(model.step.substring(1)) ?? 0
-                      },
-                      "ORDER": "-0+"
+            bool isExpanded = !context.read<ExpandedBloc>().state;
+            if (isExpanded) {
+              channel.sink.add(
+                jsonEncode(
+                  {
+                    "CMD": {
+                      "CAPTURE": {
+                        // "DELAY": model.delay.toMap(),
+                        // "MULTISHOTS": model.multishots,
+                        "HDR": {
+                          "BRACKET": int.tryParse(model.bracket) ?? 0,
+                          "STEP": double.tryParse(model.step.substring(1)) ?? 0,
+                          "ORDER": "-0+"
+                        },
+                      }
                     }
-                  }
-                },
-              ),
-            );
+                  },
+                ),
+              );
+            } else {
+              channel.sink.add(
+                jsonEncode(
+                  {
+                    "CMD": {
+                      "CAPTURE": {
+                        // "DELAY": model.delay.toMap(),
+                        // "MULTISHOTS": model.multishots,
+                        "HDR": {
+                          "BRACKET": int.tryParse(model.bracket) ?? 0,
+                          "STEP": double.tryParse(model.step.substring(1)) ?? 0,
+                          "SEQUENCE": List<String>.from(sequence.map((x) => x)),
+                          "SHIFT": double.parse(model.shift),
+                          "ORDER": "-0+",
+                        },
+                      }
+                    }
+                  },
+                ),
+              );
+            }
             // if (model.sequence.isNotEmpty) {
             //   channel.sink.add(
             //     jsonEncode(

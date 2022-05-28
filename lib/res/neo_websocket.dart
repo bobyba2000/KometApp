@@ -90,7 +90,7 @@ class NeoWebsocket {
             ShutterSpeed shutterSpeed =
                 ShutterSpeed.fromJson(jsonDecode(event));
 
-            context.read<ParamsShutterBloc>().add("${shutterSpeed.current}s");
+            context.read<ParamsShutterBloc>().add("${shutterSpeed.current}");
             int curItem = shutterSpeed.list.indexOf(shutterSpeed.current);
             try {
               String valueI = shutterSpeed.list[curItem];

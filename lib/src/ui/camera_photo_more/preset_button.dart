@@ -39,7 +39,7 @@ class _PresetButtonState extends State<PresetButton> {
         __pressButtonBloc.add(false);
       },
       child: Container(
-          width: 94.w,
+          width: 100.w,
           height: 45.h,
           child: BlocBuilder<_PressButtonBloc, bool>(
             bloc: __pressButtonBloc,

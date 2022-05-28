@@ -64,7 +64,7 @@ class _ShutterSpeedScrollerState extends State<ShutterSpeedScroller>
 
                 context
                     .read<ParamsShutterBloc>()
-                    .add("${shutterSpeed.current}s");
+                    .add("${shutterSpeed.current}");
               } else if (result["RSP"]["CONTROL_SHUTTERSPEED"] == "OK") {
                 context.read<ParamsShutterBloc>().add("${curentvalue}s");
               }

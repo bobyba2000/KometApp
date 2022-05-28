@@ -41,7 +41,7 @@ class _HDRscrollerState extends State<HDRscroller>
       model.setStep = "±0.3";
       model.setBracket = "3";
       model.setShift = "0";
-      model.setSequence = ["SHUTTERS", "SHUTTERS"];
+      model.setSequence = [];
     });
 
     stepBracketValuesBloc.currentBracket.listen((event) {

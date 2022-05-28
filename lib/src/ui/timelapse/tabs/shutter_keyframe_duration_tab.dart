@@ -148,9 +148,9 @@ class _ShutterKeyFrameDurationState extends State<ShutterKeyFrameDurationTab> {
 
                       context
                           .read<ParamsShutterBloc>()
-                          .add("${shutterSpeed.current}s");
+                          .add("${shutterSpeed.current}");
                     } else if (result["RSP"]["CONTROL_SHUTTERSPEED"] == "OK") {
-                      context.read<ParamsShutterBloc>().add("${curentvalue}s");
+                      context.read<ParamsShutterBloc>().add("$curentvalue");
                     }
                   }
                 }

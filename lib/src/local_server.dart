@@ -34,48 +34,18 @@ class Server {
                           '{"RSP":{"LIVEVIEW":"OK","STREAM":"http://91.133.85.170:8090/cgi-bin/faststream.jpg?stream=half&fps=15"}}');
                       break;
                     case '{"CMD":{"CAPTURE":"HDR"}}':
-                      print('here');
-                      await Future.delayed(
-                        Duration(seconds: 2),
-                        () {
-                          ws.add(
-                            {
-                              "NTF": {
-                                "CAPTURE": {
-                                  "HDR": {"BRACKET": -3}
-                                }
-                              }
-                            },
-                          );
+                      ws.add(
+                        {
+                          "NTF": {
+                            "CAPTURE": {
+                              "HDR": {"BRACKET": -1}
+                            }
+                          }
                         },
                       );
-                      await Future.delayed(
-                        Duration(seconds: 2),
-                        () {
-                          ws.add(
-                            {
-                              "NTF": {
-                                "CAPTURE": {
-                                  "HDR": {"BRACKET": -2}
-                                }
-                              }
-                            },
-                          );
-                        },
-                      );
-
-                      await Future.delayed(
-                        Duration(seconds: 2),
-                        () {
-                          ws.add(
-                            {
-                              "NTF": {
-                                "CAPTURE": {
-                                  "HDR": {"BRACKET": -1}
-                                }
-                              }
-                            },
-                          );
+                      ws.add(
+                        {
+                          "NTF": {"CONTROL_FSTOP": 'f/123'}
                         },
                       );
                       ws.add({
