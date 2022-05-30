@@ -64,6 +64,7 @@ dependencies:
   test: ^1.16.5
   flutter_mjpeg: ^2.0.1
   rxdart: ^0.26.0
+  circular_countdown: ^2.1.0
   
 
 dev_dependencies:

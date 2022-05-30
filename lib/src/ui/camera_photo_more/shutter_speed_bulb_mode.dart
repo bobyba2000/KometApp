@@ -130,6 +130,8 @@ class _ShutterSpeedBulbModeState extends State<ShutterSpeedBulbMode> {
                                 )
                               : BlocBuilder<BulbTimeCounterBloc, String>(
                                   builder: (context, time) {
+                                    print('bulb shot');
+                                    print(time);
                                     return Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,

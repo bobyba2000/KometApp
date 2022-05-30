@@ -42,6 +42,8 @@ class _CaptureButtonState extends State<CaptureButton>
   double percentage = 0;
   double incValue = 0;
 
+  double count = 0;
+
   @override
   void initState() {
     controller = AnimationController(
@@ -62,7 +64,7 @@ class _CaptureButtonState extends State<CaptureButton>
 
     channel = IOWebSocketChannel.connect(widget.url);
     channel.stream.listen((event) {
-      // print("repsonse me $event");
+      print("repsonse me $event");
       if (currentTabState is TabStateHDR) {
         try {
           Map<String, dynamic> map = jsonDecode(event);
@@ -84,6 +86,7 @@ class _CaptureButtonState extends State<CaptureButton>
               setState(() {
                 percentage = percentage + incValue;
               });
+
               print("percentage $percentage");
               // controller.animateTo(1);
             }
@@ -96,18 +99,33 @@ class _CaptureButtonState extends State<CaptureButton>
       try {
         Map json = jsonDecode(event);
         if (json["NTF"] != null) {
-          if (json["NTF"]["BULB"] != null &&
-              json["NTF"]["BULB"]["TIME"] != null) {
-            dynamic hour = json["NTF"]["BULB"]["TIME"]["H"];
-            hour = "$hour";
-            dynamic min = json["NTF"]["BULB"]["TIME"]["M"];
-            min = "$min";
-            dynamic sec = json["NTF"]["BULB"]["TIME"]["S"];
-            sec = "$sec";
-            String time = "$hour : $min : $sec";
-            context.read<BulbTimeCounterBloc>().add(time);
+          if (json["NTF"]["CAPTURE"] != null &&
+              json["NTF"]["CAPTURE"]["DURATION"] != null) {
+            setState(() {
+              count++;
+            });
+            int hour = json["NTF"]["CAPTURE"]["DURATION"]["H"] as int;
+            hour = hour.abs();
+            int min = json["NTF"]["CAPTURE"]["DURATION"]["M"] as int;
+            min = min.abs();
+            int sec = json["NTF"]["CAPTURE"]["DURATION"]["S"] as int;
+            sec = sec.abs();
 
-            context.read<SecondsRecieverBloc>().add(int.parse(sec));
+            if (hour == 0 && min == 0 && sec == 1) {
+              context.read<CaptureButtonPressedBloc>().add(false);
+              context.read<BulbTimeCounterBloc>().add("00 : 00 : 00");
+              context.read<SecondsRecieverBloc>().add(0);
+            } else {
+              hour = (count ~/ 3600).round();
+              min = ((count % 3600) ~/ 60).round();
+              sec = ((count % 3600) % 60).round();
+              String sString = sec < 10 ? '0$sec' : '$sec';
+              String mString = min < 10 ? '0$min' : '$min';
+              String hString = hour < 10 ? '0$hour' : '$hour';
+              String time = "$hString : $mString : $sString";
+              context.read<BulbTimeCounterBloc>().add(time);
+              context.read<SecondsRecieverBloc>().add(sec);
+            }
           }
         }
         if (json["RSP"] != null &&
@@ -115,7 +133,7 @@ class _CaptureButtonState extends State<CaptureButton>
             json["RSP"]["BULB"] == "OK") {
           context.read<CaptureButtonPressedBloc>().add(false);
           context.read<BulbTimeCounterBloc>().add("00 : 00 : 00");
-          context.read<SecondsRecieverBloc>().add(60);
+          context.read<SecondsRecieverBloc>().add(0);
         }
         if (currentTabState is TabStateHDR) {
           print(event);
@@ -147,7 +165,8 @@ class _CaptureButtonState extends State<CaptureButton>
           }
         } else {
           if (json['NTF'] != null) {
-            if (json['NTF']['CAPTURE'] != null) {
+            if (json['NTF']['CAPTURE'] != null &&
+                json['NTF']['CAPTURE']['DELAY'] != null) {
               if (json['NTF']['CAPTURE']['DELAY']['H'] == 0 &&
                   json['NTF']['CAPTURE']['DELAY']['M'] == 0 &&
                   json['NTF']['CAPTURE']['DELAY']['S'] == 0) {
@@ -180,6 +199,7 @@ class _CaptureButtonState extends State<CaptureButton>
           if (loading) return;
           setState(() {
             percentage = 0;
+            count = 0;
           });
           bool moreOptionOpen = context.read<MoreOptionVisibilityBloc>().state;
           print("currentTabState $currentTabState");
@@ -243,46 +263,7 @@ class _CaptureButtonState extends State<CaptureButton>
                 ),
               );
             }
-            // if (model.sequence.isNotEmpty) {
-            //   channel.sink.add(
-            //     jsonEncode(
-            //       {
-            //         "CMD": {
-            //           "CAPTURE": {
-            //             // "DELAY": model.delay.toMap(),
-            //             // "MULTISHOTS": model.multishots,
-            //             "HDR": {
-            //               "BRACKET": int.tryParse(model.bracket) ?? 0,
-            //               "STEP": double.tryParse(model.step.substring(1)) ?? 0,
-            //               "SEQUENCE":
-            //                   List<String>.from(model.sequence.map((x) => x)),
-            //               "SHIFT": "$shift",
-            //               "ORDER": "-0+",
-            //             }
-            //           }
-            //         }
-            //       },
-            //     ),
-            //   );
-            // } else {
-            //   channel.sink.add(
-            //     jsonEncode(
-            //       {
-            //         "CMD": {
-            //           "CAPTURE": {
-            //             // "DELAY": model.delay.toMap(),
-            //             // "MULTISHOTS": model.multishots,
-            //             "HDR": {
-            //               "BRACKET": int.tryParse(model.bracket) ?? 0,
-            //               "STEP": double.tryParse(model.step.substring(1)) ?? 0,
-            //             },
-            //             "ORDER": "-0+"
-            //           }
-            //         }
-            //       },
-            //     ),
-            //   );
-            // }
+
             channel.sink.add(
               jsonEncode(
                 {
@@ -308,25 +289,37 @@ class _CaptureButtonState extends State<CaptureButton>
                   context.read<CaptureButtonPressedBloc>().add(true);
                   int min = context.read<BulbMinBloc>().state;
                   int sec = context.read<BulbSecBloc>().state;
-                  channel.sink.add(jsonEncode({
-                    "CMD": {
-                      "BULB": {
-                        "TIME": {"H": 00, "M": min, "S": sec}
-                      }
-                    }
-                  }));
+
+                  channel.sink.add(
+                    jsonEncode(
+                      {
+                        "CMD": {
+                          "CAPTURE": {
+                            "DURATION": {"H": 0, "M": min, "S": sec}
+                          }
+                        }
+                      },
+                    ),
+                  );
+                  channel.sink.add(
+                    jsonEncode(
+                      {
+                        "CMD": {"CAPTURE": "BULB"}
+                      },
+                    ),
+                  );
                 }
               } else if (bulbType is BulbTypeStateTap) {
                 bool isTap = context.read<BulbTapBloc>().state;
                 if (isTap) {
                   context.read<CaptureButtonPressedBloc>().add(false);
                   channel.sink.add(jsonEncode({
-                    "CMD": {"BULB": "CLOSE"}
+                    "CMD": {"CAPTURE": "BREAK"}
                   }));
                 } else {
                   context.read<CaptureButtonPressedBloc>().add(true);
                   channel.sink.add(jsonEncode({
-                    "CMD": {"BULB": "OPEN"}
+                    "CMD": {"CAPTURE": "BULB"}
                   }));
                 }
                 context.read<BulbTapBloc>().add(!isTap);
@@ -361,7 +354,7 @@ class _CaptureButtonState extends State<CaptureButton>
             if (bulbType is BulbTypeStateHold) {
               context.read<CaptureButtonPressedBloc>().add(true);
               channel.sink.add(jsonEncode({
-                "CMD": {"BULB": "OPEN"}
+                "CMD": {"CAPTURE": "BULB"}
               }));
             }
           }
@@ -377,7 +370,7 @@ class _CaptureButtonState extends State<CaptureButton>
             if (bulbType is BulbTypeStateHold) {
               context.read<CaptureButtonPressedBloc>().add(false);
               channel.sink.add(jsonEncode({
-                "CMD": {"BULB": "CLOSE"}
+                "CMD": {"CAPTURE": "BREAK"}
               }));
             }
           }
@@ -395,7 +388,7 @@ class _CaptureButtonState extends State<CaptureButton>
                       )),
                 Container(
                   margin: isCounter
-                      ? EdgeInsets.all(4)
+                      ? EdgeInsets.all(8)
                       : EdgeInsets.all(isPressed ? 6 : 4),
                   decoration: BoxDecoration(
                       color: Colors.white,
